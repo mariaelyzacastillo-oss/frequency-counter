@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "sessions": {
+      "$session": {
+        ".read": "auth != null",
+        ".write": "auth != null",
+        "groups": {
+          "$group": {
+            "subjects": {
+              "$subject": {
+                ".validate": "$subject == 'Science' || $subject == 'English' || $subject == 'Filipino' || $subject == 'TLE' || $subject == 'Math' || $subject == 'ESP' || $subject == 'MAPEH' || $subject == 'AP'"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
